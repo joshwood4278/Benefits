@@ -11,3 +11,7 @@ High-3 retirement system. The financial dashboard estimates projected 2027 VA
 disability compensation using marital status and dependent ages entered in the
 profile. The 2027 rates are projections, not official VA rates, and the estimate
 is not an eligibility determination.
+
+## Navigation
+
+The app has one **State benefits** page and one **Federal benefits** page. Both share a Veteran / Dependent-survivor checkbox filter: Veteran shows veteran programs, Dependent shows dependent and survivor programs, and both shows everything. The Federal page also has topic tabs, search and an "only worth exploring" filter driven by your profile.
