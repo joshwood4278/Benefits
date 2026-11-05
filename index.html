@@ -194,7 +194,7 @@ function renderDatabase(){const q=(document.getElementById("dbSearch")?.value||"
 let currentStep=0, currentFilter='all', profile=null, findings=[];
 function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='findings')renderFindings();if(id==='action')renderActions();if(id==='database')renderDatabase();window.scrollTo({top:document.querySelector('.wrap').offsetTop-10,behavior:'smooth'});}
 function intakeTab(n){currentStep=n;document.querySelectorAll('.intakestep').forEach((e,i)=>e.classList.toggle('hide',i!==n));document.querySelectorAll('.tabs .tab').forEach((e,i)=>{if(i<3)e.classList.toggle('active',i===n)});document.getElementById('backBtn').disabled=n===0;document.getElementById('nextBtn').textContent=n===2?'Generate my findings':'Next';document.getElementById('progressBar').style.width=((n+1)/3*100)+'%';}
-function stepMove(dir){if(dir<0){intakeTab(Math.max(0,currentStep-1));return;}if(currentStep<2){intakeTab(currentStep+1);return;}generate();}
+function stepMove(dir){if(dir<0){intakeTab(Math.max(0,currentStep-1));return;}if(currentStep<2){intakeTab(currentStep+1);return;}generateLocal();}
 document.getElementById('docs').addEventListener('change',e=>{document.getElementById('fileNames').textContent=e.target.files.length?[...e.target.files].map(f=>f.name).join(', ')+' — selected locally only; not uploaded.':''});
 function val(id){return document.getElementById(id).value}
 
